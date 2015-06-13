@@ -13,6 +13,7 @@ File:		stock_quotes.py
 Above code will get google stock data for 3 months
 
 /----------------------------------/
+
 Problem: How to gather the user's tweets for stocks.
 
 Solution: Use StockTwits API to get the json data.
@@ -32,12 +33,19 @@ Solution: Use MongDB's Map/Reduce feature for grouping of user's twits. Use pyth
 
 Example: 
 
+
 for i in data:
+
         testimonial = TextBlob(i)
+        
         if testimonial.sentiment.subjectivity > 0.3:
+        
             buyCount += 1
+            
         else:
+        
             sellCount += 1
+            
 
     total = buyCount+sellCount
     buyPercent = (buyCount*100)/total
